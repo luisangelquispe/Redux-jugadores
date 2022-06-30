@@ -10,8 +10,8 @@ function App() {
       <h1>EDmananger</h1>
       <Jugadores/>
       <EquipoSeleccionado/>
-      <Suplentes/>
       <Titulares/>
+      <Suplentes/>
     </main>
   );
 }

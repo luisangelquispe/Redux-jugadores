@@ -1,7 +1,7 @@
 
 const EquipoSeleccionado =()=>{
     return(
-        <h1>sd</h1>
+        <h1>Equipo seleccionado</h1>
     );
 }
 export default EquipoSeleccionado;

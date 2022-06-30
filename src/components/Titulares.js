@@ -1,15 +1,16 @@
 import { connect } from "react-redux";
-const Titulares =({titulares})=>{
+import { quitarTitular } from "../store/jugadoresC/action";
+const Titulares =({titulares,quitarTitular})=>{
     return(
         <section>
             <h2>Titulares</h2>
             <div className="cancha">
                 {
                     titulares.map(j=>(
-                        <article className="titulares">
+                        <article key={j.id} className="titulares">
                             <div>
-                                <img src={j.foto} alt={j.nombre}/>
-                                <button>X</button>
+                                <img width={150} src={j.foto} alt={j.nombre}/>
+                                <button onClick={()=>quitarTitular(j)}>X</button>
                             </div>
                             <p>{j.nombre}</p>
                         </article>
@@ -24,9 +25,9 @@ const mapStateToProps = state => {
         titulares: state.reducerEntrenador.titulares
     }
 }
-const mapDispachToProps = (dispach) => {
-    return {
+// const mapDispachToProps = (dispach) => {
+//     return {
 
-    }
-}
-export default connect(mapStateToProps, mapDispachToProps)(Titulares)
+//     }
+// }
+export default connect(mapStateToProps, {quitarTitular})(Titulares)
